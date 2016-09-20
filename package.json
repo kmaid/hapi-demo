@@ -1,0 +1,22 @@
+{
+  "name": "hapi-demo",
+  "version": "1.0.0",
+  "description": "A test project for the hapi framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmaid/hapi-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kmaid/hapi-demo/issues"
+  },
+  "homepage": "https://github.com/kmaid/hapi-demo#readme",
+  "dependencies": {
+    "hapi": "^15.0.3"
+  }
+}
