@@ -9,3 +9,4 @@ npm install -g typescript #install typescript
 npm install typings --global #Add type def for Hapi 
 typings install dt~hapi --global --save
 typings install dt~node --global --save
+typings install dt~mocha --global --save

@@ -4,7 +4,7 @@
   "description": "A test project for the hapi framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/kmaid/hapi-demo#readme",
   "dependencies": {
-    "hapi": "^15.0.3"
+    "hapi": "^15.0.3",
+    "knex": "^0.12.1",
+    "mysql": "^2.11.1"
+  },
+  "devDependencies": {
+    "mocha": "^3.0.2"
   }
 }
