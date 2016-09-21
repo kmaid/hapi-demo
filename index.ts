@@ -76,14 +76,14 @@ server.route({
             name: request.payload.name,
             ip: request.payload.ip
         };
-        knex('servers').where('id', params.request.params.id).update(server).then(function (result: array) {
+        knex('servers').where('id', request.params.id).update(server).then(function (result: array) {
             reply(server);
         });
     },
     config: {
         validate: {
             payload: {
-                id: Joi.integer().required(),
+                id: Joi.number().required(),
                 name: Joi.string().required().min(3).max(45),
                 ip: Joi.string().required().max(45)
             }
@@ -95,7 +95,27 @@ server.route({
     method: "PATCH",
     path: "/{id}",
     handler: (request: Hapi.Request, reply: Hapi.IReply) => {
-        reply('update')
+        reply(knex('servers').select().where('id', request.params.id).then(function(servers: Array<any>) {
+            if (servers.length == 1) {
+                var server = servers[0];
+                _.forEach(request.payload, function(value, key) {
+                    server[key] = value;
+                });
+                return knex('servers').where('id', request.params.id).update(server).then(function (result: array) {
+                    return(server);
+                });
+            }
+            else return(Boom.notFound());
+        }))
+    },
+    config: {
+        validate: {
+            payload: {
+                id: Joi.number(),
+                name: Joi.string().min(3).max(45),
+                ip: Joi.string().max(45)
+            }
+        }
     }
 });
 
@@ -103,8 +123,9 @@ server.route({
     method: "DELETE",
     path: "/{id}",
     handler: (request: Hapi.Request, reply: Hapi.IReply) => {
-        knex('servers').where('id', params.request.params.id).del().then(function (result) {
-            reply(result);
+        knex('servers').where('id', request.params.id).del().then(function (result) {
+            if (result >= 1) reply({"success": true})
+            else reply (Boom.notFound());
         })
     }
 });
