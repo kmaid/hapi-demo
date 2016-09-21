@@ -4,7 +4,7 @@
   "description": "A test project for the hapi framework",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "./node_modules/.bin/lab"
   },
   "repository": {
     "type": "git",
@@ -17,17 +17,16 @@
   },
   "homepage": "https://github.com/kmaid/hapi-demo#readme",
   "dependencies": {
-    "@types/lodash": "^4.14.35",
     "hapi": "^15.0.3",
     "inert": "^4.0.2",
     "knex": "^0.12.1",
-    "lodash": "^4.16.1",
     "lout": "^9.2.0",
     "mysql": "^2.11.1",
     "vision": "^4.1.0"
   },
   "devDependencies": {
-    "mocha": "^3.0.2",
+    "lab": "^11.0.1",
+    "code": "^3.0.2",
     "retyped-knex-tsd-ambient": "0.0.0-0"
   }
 }

@@ -1,8 +1,8 @@
-var assert = require('assert');
-describe('Array', function() {
-    describe('#indexOf()', function() {
-        it('should return -1 when the value is not present', function() {
-            assert.equal(-1, [1,2,3].indexOf(4));
-        });
-    });
+const Code = require('code');   // assertion library
+const Lab = require('lab');
+const lab = exports.lab = Lab.script();
+
+lab.test('returns true when 1 + 1 equals 2', (done) => {
+    Code.expect(1 + 1).to.equal(2);
+    done();
 });

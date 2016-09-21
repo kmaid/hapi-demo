@@ -1,21 +1,20 @@
 "use strict";
-import * as Hapi from "hapi";
+import * as hapi from "hapi";
 
-const Inert = require('inert');
-const Lout = require('lout');
-const Vision = require('vision');
-const Fs = require('fs');
+const inert = require('inert');
+const lout = require('lout');
+const vision = require('vision');
+const fs = require('fs');
 
-
-const server: Hapi.Server = new Hapi.Server();
+const server: hapi.Server = new hapi.Server();
 server.connection({ port: 3000 });
 
-server.register([Vision, Inert, Lout], (err) => {
+server.register([vision, inert, lout], (err) => {
     if (err) {
         throw err;
     }
     var controllerPath = "./src/controllers/";
-    var controllers = Fs.readdirSync(controllerPath);
+    var controllers = fs.readdirSync(controllerPath);
     controllers.forEach(function (controller) {
         server.route(require(controllerPath + controller));
     });
