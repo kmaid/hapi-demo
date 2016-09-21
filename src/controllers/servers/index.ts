@@ -1,25 +1,17 @@
 import * as hapi from "hapi";
+import Knex = require("knex");
 var joi = require('joi');
 var boom = require('boom');
 
-var knex = require('knex')({
-    client: 'mysql',
-    connection: {
-        host : '127.0.0.1',
-        user : 'root',
-        password : 'testing',
-        database : 'hapi-demo_dev'
-    }
-});
-
 const PATH = "/servers";
 
-module.exports = [
+module.exports = function(knex: Knex) {
+    return [
     {
         method: "GET",
-        path: PATH + "/",
+        path: PATH,
         handler: (request: hapi.Request, reply: hapi.IReply) => {
-            reply(knex('servers').select().then(function(servers: array){
+            reply(knex('servers').select().then(function(servers: Array<any>){
                 return servers;
             }))
         }
@@ -36,13 +28,13 @@ module.exports = [
     },
     {
         method: "POST",
-        path: PATH + "/",
+        path: PATH,
         handler: (request:hapi.Request, reply:hapi.IReply) => {
             var server = {
                 name: request.payload.name,
                 ip: request.payload.ip
             };
-            knex('servers').insert(server).then( function (result: array) {
+            knex('servers').insert(server).then( function (result: Array<any>) {
                 server['id'] = result[0];
                 reply(server);
             });
@@ -65,7 +57,7 @@ module.exports = [
                 name: request.payload.name,
                 ip: request.payload.ip
             };
-            knex('servers').where('id', request.params.id).update(server).then(function (result: array) {
+            knex('servers').where('id', request.params.id).update(server).then(function (result: Array<any>) {
                 reply(server);
             });
         },
@@ -89,7 +81,7 @@ module.exports = [
                     _.forEach(request.payload, function(value, key) {
                         server[key] = value;
                     });
-                    return knex('servers').where('id', request.params.id).update(server).then(function (result: array) {
+                    return knex('servers').where('id', request.params.id).update(server).then(function (result: Array<any>) {
                         return(server);
                     });
                 }
@@ -116,4 +108,4 @@ module.exports = [
             })
         }
     }
-];
+]};

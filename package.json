@@ -4,7 +4,7 @@
   "description": "A test project for the hapi framework",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/lab -I '__core-js_shared__'"
+    "test": "NODE_ENV=testing ./node_modules/.bin/lab -I '__core-js_shared__'"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,6 @@
   },
   "devDependencies": {
     "lab": "^11.0.1",
-    "code": "^3.0.2",
-    "retyped-knex-tsd-ambient": "0.0.0-0"
+    "code": "^3.0.2"
   }
 }
