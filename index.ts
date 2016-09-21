@@ -76,7 +76,7 @@ server.route({
             name: request.payload.name,
             ip: request.payload.ip
         };
-        knex('servers').where('id', params.request.params.id).update(server).then(function (result: array){
+        knex('servers').where('id', params.request.params.id).update(server).then(function (result: array) {
             reply(server);
         });
     },
@@ -103,6 +103,8 @@ server.route({
     method: "DELETE",
     path: "/{id}",
     handler: (request: Hapi.Request, reply: Hapi.IReply) => {
-        reply('DELETE')
+        knex('servers').where('id', params.request.params.id).del().then(function (result) {
+            reply(result);
+        })
     }
 });
