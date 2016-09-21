@@ -14,3 +14,6 @@ typings install dt~hapi --global --save
 typings install dt~node --global --save
 typings install dt~mocha --global --save
 ```
+
+## API Documentation
+Automatically generated documentation is avalible on /docs

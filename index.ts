@@ -2,15 +2,24 @@
 import * as Hapi from "hapi";
 var Joi = require('joi');
 var Boom = require('boom');
+const Inert = require('inert');
+const Lout = require('lout');
+const Vision = require('vision');
 
 const server: Hapi.Server = new Hapi.Server();
 server.connection({ port: 3000 });
 
-server.start((err) => {
+server.register([Vision, Inert, Lout], (err) => {
     if (err) {
         throw err;
     }
-    console.log("server running at 3000");
+
+    server.start((err) => {
+        if (err) {
+            throw err;
+        }
+        console.log("server running at 3000");
+    });
 });
 
 var knex = require('knex')({
