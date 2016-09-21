@@ -1,5 +1,5 @@
 "use strict";
-
+console.log("index4");
 import * as hapi from "hapi";
 
 const server: hapi.Server = new hapi.Server();

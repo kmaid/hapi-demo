@@ -2,10 +2,12 @@
   "compilerOptions": {
     "removeComments": true,
     "inlineSources": true,
-    "outFile": "index.js",
+    "moduleResolution": "node",
+    "module": "commonjs",
     "sourceMap": true
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "test"
   ]
 }
