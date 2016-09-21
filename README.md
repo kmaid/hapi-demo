@@ -1,5 +1,5 @@
 # hapi-demo
-A test project for the hapi framework 
+A simple restful API using TypeScript, Knex, Hapi (Joi & Boom)
 
 # Webstorm Setup 
 https://www.jetbrains.com/help/webstorm/2016.1/transpiling-typescript-to-javascript.html#d240690e50 

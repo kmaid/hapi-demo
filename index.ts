@@ -6,6 +6,13 @@ var Boom = require('boom');
 const server: Hapi.Server = new Hapi.Server();
 server.connection({ port: 3000 });
 
+server.start((err) => {
+    if (err) {
+        throw err;
+    }
+    console.log("server running at 3000");
+});
+
 var knex = require('knex')({
     client: 'mysql',
     connection: {
@@ -98,12 +105,4 @@ server.route({
     handler: (request: Hapi.Request, reply: Hapi.IReply) => {
         reply('DELETE')
     }
-});
-
-
-server.start((err) => {
-    if (err) {
-        throw err;
-    }
-    console.log("server running at 3000");
 });
