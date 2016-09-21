@@ -17,3 +17,8 @@ typings install dt~mocha --global --save
 
 ## API Documentation
 Automatically generated documentation is available on /docs
+
+## Run Tests
+```
+npm test
+```

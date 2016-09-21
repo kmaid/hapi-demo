@@ -25,3 +25,5 @@ server.register([vision, inert, lout], (err) => {
         console.log("server running at 3000");
     });
 });
+
+module.exports = server;

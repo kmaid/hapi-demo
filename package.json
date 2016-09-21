@@ -4,7 +4,7 @@
   "description": "A test project for the hapi framework",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/lab"
+    "test": "./node_modules/.bin/lab -I '__core-js_shared__'"
   },
   "repository": {
     "type": "git",
