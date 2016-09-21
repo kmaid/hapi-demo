@@ -16,4 +16,4 @@ typings install dt~mocha --global --save
 ```
 
 ## API Documentation
-Automatically generated documentation is avalible on /docs
+Automatically generated documentation is available on /docs
