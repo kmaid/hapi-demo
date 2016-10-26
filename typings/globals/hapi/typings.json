@@ -1,8 +1,8 @@
 {
   "resolution": "main",
   "tree": {
-    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/7d23177b1abff1b80b9a2d6ffbc881f6562a2359/hapi/hapi.d.ts",
-    "raw": "registry:dt/hapi#13.0.0+20160818163303",
-    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/7d23177b1abff1b80b9a2d6ffbc881f6562a2359/hapi/hapi.d.ts"
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/e8348095c49a3ef583b806c736f132a42c0fa4f7/hapi/hapi.d.ts",
+    "raw": "registry:dt/hapi#13.0.0+20161019130714",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/e8348095c49a3ef583b806c736f132a42c0fa4f7/hapi/hapi.d.ts"
   }
 }

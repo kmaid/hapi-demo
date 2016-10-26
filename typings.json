@@ -1,8 +1,8 @@
 {
   "globalDependencies": {
-    "hapi": "registry:dt/hapi#13.0.0+20160818163303",
+    "hapi": "registry:dt/hapi#13.0.0+20161019130714",
     "knex": "registry:dt/knex#0.0.0+20160920212154",
     "mocha": "registry:dt/mocha#2.2.5+20160720003353",
-    "node": "registry:dt/node#6.0.0+20160919063032"
+    "node": "registry:dt/node#6.0.0+20161019125345"
   }
 }
