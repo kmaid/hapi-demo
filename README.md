@@ -8,11 +8,8 @@ Ubuntu Compiler Dir = /usr/local/lib/node_modules/typescript/lib
     
 ## Dependencies 
 ```
-npm install -g typescript #install typescript 
-npm install typings --global #Add type def for Hapi 
-typings install dt~hapi --global --save
-typings install dt~node --global --save
-typings install dt~mocha --global --save
+npm install -g typescript typings 
+typings install
 ```
 
 ## API Documentation
