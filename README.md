@@ -8,7 +8,8 @@ Ubuntu Compiler Dir = /usr/local/lib/node_modules/typescript/lib
     
 ## Dependencies 
 ```
-npm install -g typescript typings 
+npm install -g typescript typings
+npm install
 typings install
 ```
 
